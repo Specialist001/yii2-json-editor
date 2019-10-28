@@ -3,11 +3,11 @@
         bootstrap="tests/bootstrap.php"
 
         beStrictAboutChangesToGlobalState="true"
+        beStrictAboutCoversAnnotation="true"
         beStrictAboutOutputDuringTests="true"
         beStrictAboutTestSize="true"
         beStrictAboutTestsThatDoNotTestAnything="true"
         beStrictAboutTodoAnnotatedTests="true"
-        checkForUnintentionallyCoveredCode="true"
 
         colors="true"
         convertErrorsToExceptions="true"
