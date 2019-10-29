@@ -87,7 +87,7 @@ class JsonEditorTest extends TestCase
         $html = JsonEditor::widget(
             [
                 'clientOptions' => [
-                    'modes' => ['code', 'form', 'text', 'tree', 'view'],
+                    'modes' => ['code', 'form', 'preview', 'text', 'tree', 'view'],
                     'mode' => 'view',
                     'onChange' => 'function () {console.log(this);}',
                     'onError' => 'function (error) {console.log(error);}',
@@ -131,7 +131,7 @@ class JsonEditorTest extends TestCase
      */
     public function testEditorActiveWidgetAndDefaults()
     {
-        $html = static::catchOutput(
+        $html = OutputHelper::catchOutput(
             function () {
                 $form = ActiveForm::begin(['id' => 'data-form', 'action' => 'test', 'options' => ['csrf' => false]]);
                 echo $form->field(new ModelMock, 'data')->widget(
@@ -153,7 +153,7 @@ class JsonEditorTest extends TestCase
      */
     public function testEditorActiveWidgetWithAttributeExpression()
     {
-        $html = static::catchOutput(
+        $html = OutputHelper::catchOutput(
             function () {
                 $model = new ModelMock;
                 $model->data = ['{}', '{"foo": "bar"}'];
