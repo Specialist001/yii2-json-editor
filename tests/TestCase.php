@@ -87,21 +87,21 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
     /**
      * Asserts that the contents of a string is equal to the contents of a HTML file.
-     * @param string $methodName name of test method
+     * @param string $fileRoot name of file without extension, "stem"
      * @param string $actualString
      * @param string $message
      * @param bool $canonicalize
      * @param bool $ignoreCase
      */
     public static function assertStringEqualsHtmlFile(
-        $methodName,
+        $fileRoot,
         $actualString,
         $message = '',
         $canonicalize = false,
         $ignoreCase = false
     ) {
         static::assertStringEqualsFile(
-            __DIR__ . "/expected/$methodName.html",
+            __DIR__ . "/expected/$fileRoot.html",
             $actualString,
             $message,
             $canonicalize,
@@ -111,21 +111,21 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
     /**
      * Asserts that the contents of a string is equal to the contents of a JavaScript file.
-     * @param string $methodName name of test method
+     * @param string $fileRoot name of file without extension, "stem"
      * @param string $actualString
      * @param string $message
      * @param bool $canonicalize
      * @param bool $ignoreCase
      */
     public static function assertStringEqualsJsFile(
-        $methodName,
+        $fileRoot,
         $actualString,
         $message = '',
         $canonicalize = false,
         $ignoreCase = false
     ) {
         static::assertStringEqualsFile(
-            __DIR__ . "/expected/$methodName.js",
+            __DIR__ . "/expected/$fileRoot.js",
             $actualString,
             $message,
             $canonicalize,
